@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    background-color: #91342D;
+}
+
+.content{
+    height: 10vh;
+    width: 100%;
+    background: #91342D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content2{
+    height: 50vh;
+    width: 100%;
+    background: #91342D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.my-photo {
+    height: 25vh;
+    width: 100%;
+    margin: 0%;
+    /* background-image: url(../img/chronopiste.jpg); */
+    background-attachment: fixed;
+}
+
+.my-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my-logo {
+    height: 15vh;
+    width: 15vh;
+    /* background-image: url(../img/damier.png); */
+
+}
+.my-ligne{
+    background-color: black;
+    height: 1px;
+    width: 100%;
+}
+.my-image{
+    background-image: url("../img/chrono.png");
+    width: 300px;
+    height: 380px;
+    background-size:cover;
+}
+.my-chrono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    margin-top: 40vh;
+}
