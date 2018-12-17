@@ -1,14 +1,16 @@
-var startTime = 0
-var start = 0
-var end = 0
-var diff = 0
-var timerID = 0
+var startTime = 0;
+var start = 0;
+var end = 0;
+var diff = 0;
+var timerID = 0;
+
 
 var startbtn = document.querySelector("#start");
 startbtn.addEventListener("click",chronoStart);
 
-var stopbtn = document.querySelector("#reset");
+var stopbtn = document.querySelector("#stop");
 stopbtn.addEventListener("click",chronoStop);
+stopbtn.addEventListener("click",compareTime);
 
 var resetbtn = document.querySelector("#reset");
 resetbtn.addEventListener("click",chronoReset)
@@ -33,53 +35,44 @@ function chrono(){
 	}
 	else if(msec < 100){
 		msec = "0" +msec
-	}
-	document.getElementById("chronotime").innerHTML = hr + ":" + min + ":" + sec + ":" + msec
-	timerID = setTimeout("chrono()", 10)
+    }
+    
+    document.getElementById("chronotime").innerHTML = hr + ":" + min + ":" + sec + ":" + msec
+	timerID = setTimeout("chrono()",10)
 }
 
 function chronoStart(){
-    start = new Date()
-	chrono()
+    start = new Date();
+    chrono();
+}
+
+function chronoStop(){
+    clearTimeout(timerID);
+}
+
+function chronoReset(){
+    document.getElementById("chronotime").innerHTML = "0:00:00:000";
+	start = new Date();
+	chronoStop();
 }
 
 
+// localstorage
 
 
+var saveButton = document.querySelector("#save");
+var saveinput = document.querySelector("#saveinput");
+
+saveButton.addEventListener("click",saveTime);
 
 
+function saveTime(event) {
+	localStorage.setItem("saveTime",)
+}
 
-
-
-
-
-
-// function chronoStart(){
-// 	document.chronoForm.startstop.value = "stop!"
-// 	document.chronoForm.startstop.onclick = chronoStop
-// 	document.chronoForm.reset.onclick = chronoReset
-// 	start = new Date()
-// 	chrono()
-// }
-// function chronoContinue(){
-// 	document.chronoForm.startstop.value = "stop!"
-// 	document.chronoForm.startstop.onclick = chronoStop
-// 	document.chronoForm.reset.onclick = chronoReset
-// 	start = new Date()-diff
-// 	start = new Date(start)
-// 	chrono()
-// }
-// function chronoReset(){
-// 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
-// 	start = new Date()
-// }
-// function chronoStopReset(){
-// 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
-// 	document.chronoForm.startstop.onclick = chronoStart
-// }
-// function chronoStop(){
-// 	document.chronoForm.startstop.value = "start!"
-// 	document.chronoForm.startstop.onclick = chronoContinue
-// 	document.chronoForm.reset.onclick = chronoStopReset
-// 	clearTimeout(timerID)
-// }
+// Best time
+function compareTime(){
+	var bestTime = document.querySelector("#best_time");
+	var stopTime = document.querySelector("#chronotime");
+	bestTime.innerText = stopTime.innerText;
+}

@@ -8,8 +8,7 @@ body{
     width: 100%;
     background: #91342D;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
 .content2{
@@ -20,42 +19,68 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+.buttonsection{
+    display: flex;
+    max-width: 60vw;
+    justify-content: space-around;
+    height: 7vh;
+    margin-top: 3%;
+    width: 60vw
+}
+
 .my-photo {
-    height: 25vh;
     width: 100%;
     margin: 0%;
-    /* background-image: url(../img/chronopiste.jpg); */
     background-attachment: fixed;
 }
 
 .my-container{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: white;
+    justify-content: space-between;
 }
 
 .my-logo {
     height: 15vh;
     width: 15vh;
-    /* background-image: url(../img/damier.png); */
+    margin-left: 5%;
+}
 
-}
-.my-ligne{
-    background-color: black;
-    height: 1px;
-    width: 100%;
-}
-.my-image{
-    background-image: url("../img/chrono.png");
-    width: 300px;
-    height: 380px;
-    background-size:cover;
-}
-.my-chrono {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.best_time{
+    margin-right: 5%;
     text-align: center;
-    flex-direction: row;
-    margin-top: 40vh;
+}
+
+.best_time p{
+    margin: 0;
+    margin-top: 5%;
+}
+
+
+#best_time{
+    background: black;
+    color: white;
+}
+
+.my-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 90vh;
+}
+
+.my-img{
+    height: 75vh;
+    max-width: 90%;
+    margin-top: 10%;
+}
+
+.my-image p{
+    height: 4vh;
+    margin: 0;
+    position: relative;
+    bottom: 28%;
+    font-size: 1.3em;
 }
